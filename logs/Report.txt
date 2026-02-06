@@ -1,0 +1,54 @@
+================================================================================
+G2++ MODEL: FINAL VALUATION REPORT
+Date: 2026-02-01 01:46:59
+================================================================================
+
+------------------------------
+1. CALIBRATION SUMMARY
+------------------------------
+Optimization Status: Loaded from JSON
+Final RMSE (bps):    2.5106
+
+Calibrated Parameters:
+  a (Mean Rev 1):    0.776001
+  b (Mean Rev 2):    0.013855
+  rho (Correlation): -0.852494
+  sigma (Vol 1):     0.012331
+  eta (Vol 2):       0.007568
+
+------------------------------
+2. SIMULATION DIAGNOSTICS
+------------------------------
+Paths Generated:     8192
+Time Steps:          50
+Random Number Gen:   Sobol
+Standard Error:      0.000852
+95% Conf. Interval:  [0.7761, 0.7794]
+
+------------------------------
+3. MARTINGALE TEST
+------------------------------
+Check: Is E[Discounted Asset] == Initial Asset?
+Target Value (ZC):   0.777789
+Simulated Mean:      0.777744
+Discrepancy (bps):   -0.4458 bps
+Status:              PASSED
+
+------------------------------
+4. PRICING RESULTS (bps)
+------------------------------
+Structure:           Bermudan 1Y-10Y
+Strike:              3.0000%
+--------------------
+Bermudan Price:      254.5576
+European (MC):       210.4672
+European (Analytic): 222.1010
+Control Var Adj:     -11.6338
+
+------------------------------
+5. RISK SENSITIVITIES (Greeks)
+------------------------------
+DV01 (Rate Delta):   2.4797
+Vega (Sigma):        -0.2982
+Vega (Eta):          4.5855
+================================================================================
