@@ -3,21 +3,21 @@
 This project implements a Two-Factor Gaussian model (G2++) model. It features a Bermudan Swaptions pricer with Longstaff-Schwartz Least-Squares Monte Carlo (LSM) method. 
 
 ## Features
-1. **Calibration**
+**Calibration**
    * **Analytical Formula**: Fits model parameters ($a, b, \sigma, \eta, \rho$) to market Swaption volatility surfaces with analytical approximation.
-   * **Optimization**: Supports both Global (Differential Evolution) and Local (L-BFGS-B) optimization strategies with penalty functions to ensure parameter stability.
+   * **Optimization**: Supports both Global (Differential Evolution) and Local (L-BFGS-B) optimization strategies. Default is first Global, then Local.
 
-2. **Monte Carlo Simulation**
+**Monte Carlo Simulation**
    * **Quasi-Monte Carlo**: Utilizes Sobol Sequences for faster convergence.
    * **Brownian Bridge**: Implements Brownian Bridge path construction to further improve the distribution of path generation.
    * **Antithetic Variates**: systematic variance reduction for the stochastic drivers.
 
-3. **Pricing:**
+**Pricing:**
    * Implements the **Longstaff-Schwartz (LSM)** algorithm to approximate the optimal exercise boundary.
    * **Control Variate**: Corrects the Bermudan Monte Carlo price using the residual error between the Monte Carlo European price and the Analytical European price (Bachelier/Normal model).
    * **Greeks**: Calculates DV01 (Delta) and Vega sensitivities via Finite Difference.
 
-4. **Diagnostics and Visualization**
+**Diagnostics and Visualization**
    * **Validation**: Automated Martingale Tests to ensure the model correctly recovers the initial Zero Coupon curve.
    * **Plots**:
      * 3D Volatility Surface (Market vs. Model vs. Residuals).
@@ -44,9 +44,9 @@ This project implements a Two-Factor Gaussian model (G2++) model. It features a 
 ## Output
 * **Console**: Real-time logging of calibration progress (RMSE) and pricing results.
 
-* **Plots**: If VOL_PLOTS = True in config, interactive matplotlib windows will show the calibration quality and exercise boundaries.
+* **Plots**: If ```VOL_PLOTS = True``` in config, interactive matplotlib windows will show the calibration quality and exercise boundaries.
 
-* **Report**: A detailed logs/Report.txt is generated, containing:
+* **Report**: A detailed ```logs/Report.txt``` is generated, containing:
   * Calibration statistics (RMSE, parameters).
   * Martingale validation status (Pass/Fail).
   * Monte Carlo confidence intervals.
